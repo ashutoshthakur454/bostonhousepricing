@@ -1,0 +1,43 @@
+Info regarding column names:
+
+CRIM     per capita crime rate by town
+ZN       proportion of residential land zoned for lots over 25,000 sq.ft.
+INDUS    proportion of non-retail business acres per town
+CHAS     Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)
+NOX      nitric oxides concentration (parts per 10 million)
+RM       average number of rooms per dwelling
+AGE      proportion of owner-occupied units built prior to 1940
+DIS      weighted distances to five Boston employment centres
+RAD      index of accessibility to radial highways
+TAX      full-value property-tax rate per $10,000
+PTRATIO  pupil-teacher ratio by town
+B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
+LSTAT    % lower status of the population
+MEDV     Median value of owner-occupied homes in $1000's
+
+
+After trying different models on the train and test datasets this was the result obtained:
+
+Linear Regression:
+Mean cross val rmse score:  4.435793335644755
+Std:  2.338211391685566
+
+KNN regressor:
+Mean cross val rmse score:  5.277645040754619
+Std:  2.4127735654933793
+
+Ridge:
+Mean cross val rmse score:  4.212188147073058
+Std:  2.444954633998264
+
+Lasso:
+Mean cross val rmse score:  4.594763521125112
+Std:  2.544429744805117
+
+Decision Tree:
+Mean cross val rmse score:  5.447365748507776
+Std:  1.811341090022192
+
+Random Forest:
+Mean cross val rmse score:  4.14858032064126
+Std:  2.429474925499799
