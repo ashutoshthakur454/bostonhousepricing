@@ -1,3 +1,112 @@
-<h1>
-Jinda ho?
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+ <!-- !<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'> -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'> -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
+<style>
+    .login{
+        text-align: center;
+        color: white;
+        position: absolute;
+        font-size: 25px;;
+        /* padding: 40px; */
+        padding-top: 180px;
+        /* transform: translate(-50%,-50%); */
+        background-image: linear-gradient(rgb(4,9,30,0.7),rgb(4,9,30,0.7)),url(https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+        width: 100%;
+        height: 40vh;
+        background-size:cover;
+        background-position :center;
+        position: relative;
+    }
+    .textbox{
+        padding: 20px;
+        text-align: center;
+        /* border: 2px solid black; */
+        background-color: #979c9a;
+        
+    }
+    input[type=text] {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+    input[type=text]:focus {
+        border: 3px solid #555;
+    }
+    .btn{
+        display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 12px 34px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    }
+    .btn{
+    overflow-x: hidden;
+    }
+    .btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+    }
+    .predict{
+        font-size: 30px;
+        color: white
+    }
+</style>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
+</div>
+
+     <!-- Main Input For Receiving Query to our ML -->
+     <div class="textbox">
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br><br>
+    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br><br>
+        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br><br>
+        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br><br>
+        <input type="text" name="NOX" placeholder="NOX" required="required" /><br><br>
+        <input type="text" name="RM" placeholder="RM" required="required" /><br><br>
+        <input type="text" name="Age" placeholder="Age" required="required" /><br><br>
+        <input type="text" name="DIS" placeholder="DIS" required="required" /><br><br>
+        <input type="text" name="RAD" placeholder="RAD" required="required" /><br><br>
+        <input type="text" name="TAX" placeholder="TAX" required="required" /><br><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br><br>
+        <input type="text" name="B" placeholder="B" required="required" /><br><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+    <div class="predict">
+
+    {{prediction_text}}
+    </div>
+</div>
+</body>
+</html>
